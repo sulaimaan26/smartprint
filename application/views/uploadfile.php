@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact V4</title>
+	<title>Upload File!!!</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -26,6 +26,7 @@
 <!--===============================================================================================-->
 </head>
 <body>
+<?php //print_r($storedetails); ?>
 
 
 	<div class="container-contact100">
@@ -33,7 +34,9 @@
 			<!-- <form class="contact100-form validate-form"> -->
 			<?php echo form_open_multipart('Getdetails/getfile','class="contact100-form validate-form"')?>	
 			<span class="contact100-form-title">
-					Take Print
+					Welcome to
+					<br>
+					<span><?php echo $storedetails[0]->storename ?></span>
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
