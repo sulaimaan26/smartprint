@@ -8,6 +8,12 @@
 </head>
 <body>
     <h1>Thank you</h1>
+    <h2>Please scan your QRcode to proceed</h2>
+    <?php //print_r($store_id[0]->qrcode_path); ?>
+    <div>
+
+    </div>
+    <img src="<?php echo $store_id[0]->qrcode_path; ?>" alt="">
     
 </body>
 </html>

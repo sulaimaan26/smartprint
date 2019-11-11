@@ -26,12 +26,13 @@
 <!--===============================================================================================-->
 </head>
 <body>
+<?php echo validation_errors(); ?>
 
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<!-- <form class="contact100-form validate-form"> -->
-			<?php echo form_open_multipart('Getdetails/getstoredetails','class="contact100-form validate-form"')?>	
+			<!-- <form class="contact100-form  validate-form"> -->
+			<?php echo form_open_multipart('Getdetails/getstoredetails',array('class'=>'contact100-form validate-form','name'=>'registration'))?>	
 			<span class="contact100-form-title">
 					Register Your Store
 				</span>
@@ -142,7 +143,10 @@
 <!--===============================================================================================-->
 	<script src="<?php echo base_url(); ?>/assets/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="<?php echo base_url(); ?>/assets/js/main.js"></script>
+	<!-- <script src="<?php echo base_url(); ?>/assets/js/main.js"></script> -->
+<!--===============================================================================================-->
+	<script src="<?php echo base_url(); ?>assets/js/jquery-validation-1.15.0/dist/jquery.validate.min.js"></script>
+	<script src="<?php echo base_url(); ?>/assets/js/form-validation.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>

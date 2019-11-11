@@ -32,7 +32,7 @@
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<!-- <form class="contact100-form validate-form"> -->
-			<?php echo form_open_multipart('Getdetails/getfile','class="contact100-form validate-form"')?>	
+			<?php echo form_open_multipart('Getfile/getfile','class="contact100-form validate-form"')?>	
 			<span class="contact100-form-title">
 					Welcome to
 					<br>
