@@ -6,8 +6,8 @@ class Usermodel extends CI_Model{
         parent::__construct();
     }
 
-    public function updatedata($name,$file_location){
-        $query="INSERT INTO userdata (username,filename) values ('".$name."','".$file_location."');";
+    public function updatedata($name,$file_location,$fromsessionstore_id){
+        $query="INSERT INTO userdata (username,filename,store_id) values ('".$name."','".$file_location."','".$fromsessionstore_id."');";
         $this->db->query($query);
     }
 
@@ -21,8 +21,8 @@ class Usermodel extends CI_Model{
         }
     }
 
-    public function updatestoredata($store_encid,$store_name,$store_location,$store_email,$store_mobilenumber,$qrcode_path){
-        $query="INSERT INTO store_detail (store_id,storename,storelocation,storeemail,storenumber,qrcode_path) VALUES('".$store_encid."','".$store_name."','".$store_location."','".$store_email."','".$store_mobilenumber."','".$qrcode_path."');";
+    public function updatestoredata($store_encid,$store_name,$store_location,$store_email,$store_mobilenumber,$qrcode_path,$store_password){
+        $query="INSERT INTO store_detail (store_id,storename,storelocation,storeemail,storenumber,qrcode_path,store_password) VALUES('".$store_encid."','".$store_name."','".$store_location."','".$store_email."','".$store_mobilenumber."','".$qrcode_path."','".$store_password."');";
         $this->db->query($query);
     }
 

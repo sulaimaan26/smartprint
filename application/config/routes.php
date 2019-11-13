@@ -58,6 +58,15 @@ $route['store-register'] ='getdetails/register';
 $route['qrcodescan/(:any)'] = 'getfile/qrcodescan/$1';
 $route['qrcodescan'] = 'getfile/qrcodescan/';
 $route['thankyou'] = 'getdetails/thankyou/';
-$route['store-register/checkuserexist/(:any)'] = 'getdetails/checkuserexist/$1';
+$route['store-register/checkuserexist'] = 'getdetails/checkuserexist';
+$route['admin']='admin';
+$route['admin/userprofile']='admindashboard/userprofile';
+$route['admin/tablelist']='admindashboard/tablelist';
+$route['admin/typography']='admindashboard/typography';
+$route['admin/icons']='admindashboard/icons';
+$route['admin/maps']='admindashboard/maps';
+$route['admin/notifications']='admindashboard/notifications';
+$route['getfile/getfile']='Getfile/getfile';
+$route['admin/dashboard']='admindashboard/dashboard';
 
 

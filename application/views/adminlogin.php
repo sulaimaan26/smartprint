@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Register Your Store!!!</title>
+	<title>Upload File!!!</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -26,54 +26,29 @@
 <!--===============================================================================================-->
 </head>
 <body>
-<?php echo validation_errors(); ?>
+<?php //print_r($storedetails); ?>
 
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<!-- <form class="contact100-form  validate-form"> -->
-			<?php echo form_open_multipart('Getdetails/getstoredetails',array('class'=>'contact100-form validate-form','name'=>'registration'))?>	
+			<!-- <form class="contact100-form validate-form"> -->
+			<?php echo form_open_multipart('admin/login','class="contact100-form validate-form"')?>	
 			<span class="contact100-form-title">
-					Register Your Store
+					Login
+					<br>
+					<span>To proceed</span>
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Your Store Name</span>
-					<input class="input100" type="text" name="store_name" placeholder="Enter your store name">
-					<span class="focus-input100"></span>
-                </div>
-                <div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Your Store Email</span>
-					<input class="input100" type="email" name="store_email" placeholder="Enter your store Email ID">
-					<span class="focus-input100"></span>
-                </div>
-                <div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Your Store Mobilenumber</span>
-					<input class="input100" type="mobilenumber" name="store_mobilenumber" placeholder="Enter your store mobilenumber">
-					<span class="focus-input100"></span>
-				</div>
-				
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Your Password</span>
-					<input class="input100" type="password"  placeholder="Enter your password">
+					<span class="label-input100">Your Name</span>
+					<input class="input100" type="mobilenumber" name="storeloginnumber" placeholder="Enter your mobile number">
 					<span class="focus-input100"></span>
 				</div>
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Re-confirm Password</span>
-					<input class="input100" type="password" name="store_password" placeholder="Enter your re-confirm password">
-					<span class="focus-input100"></span>
-                </div>
-                
-                <div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Your Store Location</span>
-					<input class="input100" type="text" name="store_location" placeholder="Enter your store location">
+					<span class="label-input100">Enter Password</span>
+					<input class="input100" type="password" name="storeloginpassword" placeholder="Enter your password">
 					<span class="focus-input100"></span>
 				</div>
-				<!-- <div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Upload Documents</span>
-					<input class="input100" type="file" name="upload_file" placeholder="Enter your name">
-					<span class="focus-input100"></span>
-				</div> -->
 
 				<!-- <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
 					<span class="label-input100">Email</span>
@@ -117,9 +92,9 @@
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn" value="getstoredetails" name="register">
+						<button class="contact100-form-btn" value="admin" name="login">
 							<span>
-								Register
+								Submit
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							</span>
 						</button>
@@ -154,10 +129,7 @@
 <!--===============================================================================================-->
 	<script src="<?php echo base_url(); ?>/assets/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<!-- <script src="<?php echo base_url(); ?>/assets/js/main.js"></script> -->
-<!--===============================================================================================-->
-	<script src="<?php echo base_url(); ?>assets/js/jquery-validation-1.15.0/dist/jquery.validate.min.js"></script>
-	<script src="<?php echo base_url(); ?>/assets/js/form-validation.js"></script>
+	<script src="<?php echo base_url(); ?>/assets/js/main.js"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>

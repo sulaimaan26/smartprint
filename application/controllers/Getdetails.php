@@ -37,7 +37,8 @@ class Getdetails extends CI_Controller
 			$store_location = $this->input->post('store_location');
 			$store_email = $this->input->post('store_email');
 			$store_mobilenumber = $this->input->post('store_mobilenumber');
-			$encryp_store_id = crypt($store_mobilenumber, 'st');
+			$store_password = $this->input->post('store_password');		
+			$encryp_store_id = crypt(date("his"), 'st');
 			if ($this->UserModel->checkuserexist($store_mobilenumber)) {
 				echo "Already registered". "<a href="."/store-register"."Home>";
 			} else {
@@ -47,11 +48,12 @@ class Getdetails extends CI_Controller
 						$url = "https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=" . base_url() . "/qrcodescan/" . $encryp_store_id . "&choe=UTF-8";
 						mkdir("./assets/storefiles/" . $encryp_store_id, 0777);
 						mkdir("./assets/storefiles/" . $encryp_store_id . "/qrcodes", 0777);
+						mkdir("./assets/storefiles/" . $encryp_store_id . "/uplodadedfiles", 0777);
 						file_put_contents('./assets/storefiles/' . $encryp_store_id . '/qrcodes/' . $encryp_store_id . '.png', file_get_contents($url));
 					}
 					$qrcode_path = "./assets/storefiles/" . $encryp_store_id . "/qrcodes/" . $encryp_store_id . ".png";
 					//storing values in db
-					$this->UserModel->updatestoredata($encryp_store_id, $store_name, $store_location, $store_email, $store_mobilenumber, $qrcode_path);
+					$this->UserModel->updatestoredata($encryp_store_id, $store_name, $store_location, $store_email, $store_mobilenumber, $qrcode_path,$store_password);
 					$this->session->set_userdata('store_id',$encryp_store_id);
 					redirect('thankyou');
 				} else {
@@ -62,13 +64,10 @@ class Getdetails extends CI_Controller
 	}
 
 
-	public function checkuserexist($mobilenumber)
+	public function checkuserexist()
 	{
 
-		if ($this->UserModel->checkuserexist($mobilenumber)) {
-			echo json_encode(['success' => true]);
-		} else {
 			echo json_encode(['success' => false]);
-		}
+		
 	}
 }
