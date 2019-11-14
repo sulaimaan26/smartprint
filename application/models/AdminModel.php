@@ -10,7 +10,6 @@ class AdminModel extends CI_Model{
         }else{
             return false;
         }
-
     }
     
     public function getstoredetails($login_mobilenumber,$login_password){
@@ -21,6 +20,12 @@ class AdminModel extends CI_Model{
 
     public function getfiledetails($store_id){
         $query="select * from userdata where store_id='".$store_id."' ";
+        $result=$this->db->query($query)->result();
+        return $result;
+    }
+
+    public function getstoreemail($storeemail){
+        $query="select * from store_detail where storeemail='".$storeemail."' ";
         $result=$this->db->query($query)->result();
         return $result;
     }

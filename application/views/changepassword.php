@@ -34,19 +34,20 @@
 			<!-- <form class="contact100-form validate-form"> -->
 			<?php echo form_open_multipart('admin/login','class="contact100-form validate-form"')?>	
 			<span class="contact100-form-title">
-					Login
+					Change 
 					<br>
-					<span>To proceed</span>
+					<span>your password</span>
 				</span>
 
 				<div class="wrap-input100 validate-input" data-validate="Name is required">
-					<span class="label-input100">Your Name</span>
-					<input class="input100" type="mobilenumber" name="storeloginnumber" placeholder="Enter your mobile number">
-					<span class="focus-input100"></span>
-				</div>
-				<div class="wrap-input100 validate-input" data-validate="Name is required">
 					<span class="label-input100">Enter Password</span>
 					<input class="input100" type="password" name="storeloginpassword" placeholder="Enter your password">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 validate-input" data-validate="Name is required">
+					<span class="label-input100">Confirm your Password</span>
+					<input class="input100" type="password" name="storeloginpassword" placeholder="Confirm your password">
 					<span class="focus-input100"></span>
 				</div>
 
@@ -88,13 +89,12 @@
 					<textarea class="input100" name="message" placeholder="Your message here..."></textarea>
 					<span class="focus-input100"></span>
 				</div> -->
-				<a href="dd">Forgot Password?</a>
 				<div class="container-contact100-form-btn">
 					<div class="wrap-contact100-form-btn">
 						<div class="contact100-form-bgbtn"></div>
-						<button class="contact100-form-btn" value="admin" name="login">
+						<button class="contact100-form-btn" value="admin" name="changepassword">
 							<span>
-								Submit
+								Change password
 								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 							</span>
 						</button>

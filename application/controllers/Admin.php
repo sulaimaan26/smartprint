@@ -31,61 +31,35 @@ class Admin extends CI_Controller
         }
     }
 
-    public function dashboard()
+    public function logout()
     {
-        //print_r($this->session->userdata('storelogindata'));
-        $output['logindata']=$this->session->userdata('storelogindata');
-        $this->load->view('admin/examples/header.php');
-        $this->load->view('admin/examples/sidebar.php',$output);
-        $this->load->view('admin/examples/dashboard.php');
-        $this->load->view('admin/examples/footer.php');
+        $this->session->unset_userdata('storelogindata');
+        redirect('admin');
     }
 
-    public function userprofile()
+    public function recoverpassword()
     {
-        $this->load->view('admin/examples/header.php');
-        $this->load->view('admin/examples/sidebar.php');
-        $this->load->view('admin/examples/user.php');
-        $this->load->view('admin/examples/footer.php');
+        $this->load->view('forgotpassword');
     }
 
-    public function tablelist()
+
+    public function sendrecoverlink()
     {
-        $this->load->view('admin/examples/header.php');
-        $this->load->view('admin/examples/sidebar.php');
-        $this->load->view('admin/examples/table.php');
-        $this->load->view('admin/examples/footer.php');
+        $storeloginemail = $this->input->post('storeloginemail');
+        if ($this->input->post('recoverpassword')) {
+            if ($this->AdminModel->getstoreemail($storeloginemail)) {
+                echo "success";
+                //$this->session->set_userdata('storelogindata', $this->AdminModel->getstoredetails($login_mobilenumber, $login_password));
+                //redirect('admin/dashboard');
+            } else {
+                echo "please register";
+                echo $storeloginemail;
+            }
+        }
     }
 
-    public function typography()
+    public function changepassword()
     {
-        $this->load->view('admin/examples/header.php');
-        $this->load->view('admin/examples/sidebar.php');
-        $this->load->view('admin/examples/typography.php');
-        $this->load->view('admin/examples/footer.php');
-    }
-
-    public function icons()
-    {
-        $this->load->view('admin/examples/header.php');
-        $this->load->view('admin/examples/sidebar.php');
-        $this->load->view('admin/examples/icons.php');
-        $this->load->view('admin/examples/footer.php');
-    }
-
-    public function maps()
-    {
-        $this->load->view('admin/examples/header.php');
-        $this->load->view('admin/examples/sidebar.php');
-        $this->load->view('admin/examples/maps.php');
-        $this->load->view('admin/examples/footer.php');
-    }
-
-    public function notifications()
-    {
-        $this->load->view('admin/examples/header.php');
-        $this->load->view('admin/examples/sidebar.php');
-        $this->load->view('admin/examples/notifications.php');
-        $this->load->view('admin/examples/footer.php');
+        $this->load->view('changepassword');
     }
 }

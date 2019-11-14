@@ -68,5 +68,8 @@ $route['admin/maps']='admindashboard/maps';
 $route['admin/notifications']='admindashboard/notifications';
 $route['getfile/getfile']='Getfile/getfile';
 $route['admin/dashboard']='admindashboard/dashboard';
+$route['admin/logout']='admin/logout';
+$route['admin/recoverpassword']='admin/recoverpassword';
+$route['admin/changepassword']='admin/changepassword';
 
 

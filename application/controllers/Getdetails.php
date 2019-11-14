@@ -38,7 +38,7 @@ class Getdetails extends CI_Controller
 			$store_email = $this->input->post('store_email');
 			$store_mobilenumber = $this->input->post('store_mobilenumber');
 			$store_password = $this->input->post('store_password');		
-			$encryp_store_id = crypt(date("his"), 'st');
+			$encryp_store_id = crypt(date("Ymdsih"),'st');
 			if ($this->UserModel->checkuserexist($store_mobilenumber)) {
 				echo "Already registered". "<a href="."/store-register"."Home>";
 			} else {

@@ -5,13 +5,16 @@ class Admindashboard extends CI_Controller
     
     public function __construct()
     {
-        global $output;
         parent::__construct();
         $this->load->helper('url');
         $this->load->helper('form');
         $this->load->model('AdminModel');
-        $this->sessionvalue['logindata']=$this->session->userdata('storelogindata');
-        
+        if($this->session->userdata('storelogindata')){
+            $this->sessionvalue['logindata']=$this->session->userdata('storelogindata');
+        }
+        else{
+            redirect('admin');
+        }
     }
 
     
@@ -28,7 +31,7 @@ class Admindashboard extends CI_Controller
     {
         $this->load->view('admin/examples/header.php');
         $this->load->view('admin/examples/sidebar.php',$this->sessionvalue);
-        $this->load->view('admin/examples/user.php');
+        $this->load->view('admin/examples/user.php',$this->sessionvalue);
         $this->load->view('admin/examples/footer.php');
     }
 
