@@ -32,8 +32,9 @@ CREATE TABLE `store_detail` (
   `qrcode_path` varchar(255) NOT NULL,
   `qrscan_count` int(11) DEFAULT NULL,
   `store_password` varchar(255) DEFAULT NULL,
+  `recw_pwd_time` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`storeid`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +43,7 @@ CREATE TABLE `store_detail` (
 
 LOCK TABLES `store_detail` WRITE;
 /*!40000 ALTER TABLE `store_detail` DISABLE KEYS */;
-INSERT INTO `store_detail` VALUES (46,'shanthi xerox','chennai','sulaimaan26@gmail.com',7299508683,'stNCTDDnfwdZg','./assets/storefiles/stNCTDDnfwdZg/qrcodes/stNCTDDnfwdZg.png',3,'testtest'),(47,'sulaimaan','chennai','sulaimaan26@gmail.com',7890654321,'stsOA/Gjj6oRE','./assets/storefiles/stsOA/Gjj6oRE/qrcodes/stsOA/Gjj6oRE.png',NULL,'testtest'),(48,'sm traders','chennai','sulaimaan2655@gmail.com',9876543215,'styU7gN2YgXVc','./assets/storefiles/styU7gN2YgXVc/qrcodes/styU7gN2YgXVc.png',1,'testtest');
+INSERT INTO `store_detail` VALUES (52,'sulaimaan','chennai','sulaimaan26@gmail.com',7299508683,'stv1z0Jdp9zq6','./assets/storefiles/stv1z0Jdp9zq6/qrcodes/stv1z0Jdp9zq6.png',NULL,'testtest',NULL);
 /*!40000 ALTER TABLE `store_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,4 +82,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-13 18:12:23
+-- Dump completed on 2019-11-14 15:36:48
